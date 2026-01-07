@@ -42,7 +42,7 @@ const ContactHeader = () => {
             transition={{ duration: 0.6 }}
             className="
               sm:hidden
-              text-[32px]
+              text-[38px]
               leading-snug
               font-extrabold
               text-white
@@ -77,7 +77,7 @@ const ContactHeader = () => {
             transition={{ delay: 0.25, duration: 0.7 }}
             className="
               text-[16px]
-              sm:text-xl md:text-2xl lg:text-[26px]
+              sm:text-xl md:text-2xl lg:text-[24px]
               text-white/90
               leading-relaxed
               max-w-[95%] sm:max-w-none

@@ -78,7 +78,7 @@ Details: ${formData.details}
           <h2 className="hidden sm:block text-4xl md:text-5xl lg:text-[60px] font-bold text-[#2C3E50] mb-4">
             Request A Custom Package
           </h2>
-          <h2 className="block sm:hidden text-xl font-bold text-[#2C3E50] mb-4">
+          <h2 className="block sm:hidden text-3xl font-bold text-[#2C3E50] mb-4">
             <span className="block">Request A</span>
             <span className="block">Custom Package</span>
           </h2>
