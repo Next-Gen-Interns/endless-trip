@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Poppins } from "next/font/google"; // Add this import
+import Link from "next/link";
 
 // Configure Poppins font
 const poppins = Poppins({
@@ -50,9 +51,9 @@ export default function Hero() {
             20+ years of creating unforgettable journeys to 75+ countries,
             crafting memories that last a lifetime.
           </p>
-
-          <button
-            className="
+          <Link href="/packages">
+            <button
+              className="
     mt-8 bg-orange-500
     px-8 py-3 rounded-full
     mx-auto lg:mx-0 block
@@ -69,9 +70,10 @@ export default function Hero() {
     transition-colors duration-200
    
   "
-          >
-            Explore Packages
-          </button>
+            >
+              Explore Packages
+            </button>
+          </Link>
         </motion.div>
 
         <motion.div

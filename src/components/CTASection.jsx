@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { motion } from "framer-motion";
 
@@ -26,9 +27,9 @@ bg-[linear-gradient(45deg,#4a1f60_0%,#8b3a73_20%,#ff8c1a_100%)]"
         <p className="mt-4 text-lg text-white/90">
           Let us craft your perfect holiday experience, tailored just for you.
         </p>
-
-        <button
-          className="
+        <Link href="/contactus">
+          <button
+            className="
     mt-10
     px-12 py-4
     rounded-full
@@ -50,9 +51,10 @@ bg-[linear-gradient(45deg,#4a1f60_0%,#8b3a73_20%,#ff8c1a_100%)]"
     active:translate-y-0
     active:shadow-md
   "
-        >
-          Contact Us Now
-        </button>
+          >
+            Contact Us Now
+          </button>
+        </Link>
       </motion.div>
     </section>
   );

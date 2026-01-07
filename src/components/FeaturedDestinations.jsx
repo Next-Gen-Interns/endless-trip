@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
+import Link from "next/link";
 /* ---------------- TEMP DATA (Admin-ready) ---------------- */
 // Later this will come from API / Admin Panel
 const featuredPackages = [
@@ -133,9 +133,27 @@ export default function FeaturedDestinations() {
           transition={{ duration: 0.6 }}
           className="text-center mt-16"
         >
-          <button className="bg-orange-500 text-white px-10 py-3 rounded-full font-medium hover:bg-orange-600 transition">
+          <Link
+            href="/packages"
+            className="
+    mt-8 bg-orange-500
+    px-8 py-3 rounded-full
+    inline-block
+    mx-auto lg:mx-0
+    text-black hover:text-white
+    font-semibold
+    shadow-lg
+    transition-colors duration-200
+
+    [text-shadow:0_2px_3px_rgba(0,0,0,0.45)]
+    hover:[text-shadow:0_3px_4px_rgba(0,0,0,0.6)]
+
+    drop-shadow-[0_2px_2px_rgba(0,0,0,0.35)]
+    hover:drop-shadow-[0_3px_4px_rgba(0,0,0,0.45)]
+  "
+          >
             View All Destinations
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>

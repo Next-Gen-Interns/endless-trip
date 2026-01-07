@@ -1,6 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+
+const QUICK_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Packages", href: "/packages" },
+  { label: "Contact", href: "/contactus" },
+];
 
 export default function Footer() {
   return (
@@ -53,20 +61,22 @@ export default function Footer() {
             <div className="w-10 h-[3px] bg-orange-400 mb-4 rounded-full" />
 
             <ul className="space-y-3 text-md text-white/80">
-              {["Home", "About Us", "Packages", "Contact"].map((link) => (
-                <li
-                  key={link}
-                  className="
-    group flex items-center gap-2 cursor-pointer
-    transition-all duration-300
-    hover:text-orange-400
-    
-  "
-                >
-                  <i className="fas fa-chevron-right text-orange-400 transition-transform duration-300 group-hover:translate-x-2"></i>
-                  <span className="transition-transform duration-300 group-hover:translate-x-2">
-                    {link}
-                  </span>
+              {QUICK_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="
+          group flex items-center gap-2
+          transition-all duration-300
+          hover:text-orange-400
+        "
+                  >
+                    <i className="fas fa-chevron-right text-orange-400 transition-transform duration-300 group-hover:translate-x-2"></i>
+
+                    <span className="transition-transform duration-300 group-hover:translate-x-2">
+                      {link.label}
+                    </span>
+                  </Link>
                 </li>
               ))}
             </ul>

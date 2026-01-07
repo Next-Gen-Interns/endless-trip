@@ -26,6 +26,8 @@ body {
   scroll-behavior: smooth;
 }
 
+
+
 /* Add to your global.css */
 /* Add these styles */
 @keyframes fadeIn {
@@ -76,4 +78,34 @@ body {
   @apply w-full border border-gray-300 rounded-md px-3 py-2
          focus:outline-none focus:ring-2 focus:ring-blue-500
          focus:border-blue-500;
+}
+
+.beach-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+    url("https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.beach-bg-2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url("https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.beach-bg-3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  background-attachment: fixed;
+  text-align: center;
+  color: white;
 }

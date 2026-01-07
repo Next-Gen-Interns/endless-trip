@@ -5,6 +5,8 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Poppins } from "next/font/google"; // Add this import
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 // Configure Poppins font
 const poppins = Poppins({
@@ -14,16 +16,17 @@ const poppins = Poppins({
 });
 
 const NAV_LINKS = [
-  { label: "Home", id: "home" },
-  { label: "About", id: "about" },
-  { label: "Packages", id: "packages" },
-  { label: "Contact", id: "contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Packages", href: "/packages" },
+  { label: "Contact", href: "/contactus" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
+  const pathname = usePathname();
 
   /* ---------------- Scroll background change ---------------- */
   useEffect(() => {
@@ -63,14 +66,16 @@ export default function Navbar() {
           className="flex items-center cursor-pointer"
           onClick={() => handleScroll("home")}
         >
-          <Image
-            src="/logo.jpeg"
-            alt="Logo"
-            width={140}
-            height={40}
-            className="h-11 w-auto object-contain"
-            priority
-          />
+          <Link href="/">
+            <Image
+              src="/logo.jpeg"
+              alt="Logo"
+              width={140}
+              height={40}
+              className="h-11 w-auto object-contain"
+              priority
+            />
+          </Link>
         </div>
 
         {/* ---------------- Desktop Menu ---------------- */}
@@ -79,27 +84,27 @@ export default function Navbar() {
         >
           {" "}
           {NAV_LINKS.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => handleScroll(link.id)}
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
               className={`relative group tracking-tight
-  ${
-    active === link.id
-      ? "text-orange-500 font-semibold"
-      : "text-gray-800 font-medium"
-  }
-`}
+    ${
+      pathname === link.href
+        ? "text-orange-500 font-semibold"
+        : "text-gray-800 font-medium"
+    }
+  `}
             >
               {link.label}
 
               <span
-                className={`absolute left-0 -bottom-2 h-[2px]
- bg-orange-500
-    transition-[width] duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]
-    ${active === link.id ? "w-full" : "w-0 group-hover:w-full"}
-  `}
+                className={`absolute left-0 -bottom-2 h-[2px] bg-orange-500
+      transition-[width] duration-300
+      ${pathname === link.href ? "w-full" : "w-0 group-hover:w-full"}
+    `}
               />
-            </button>
+            </Link>
           ))}
         </nav>
 
@@ -126,25 +131,18 @@ export default function Navbar() {
             <nav className="flex flex-col px-6 py-6 gap-5">
               {NAV_LINKS.map((link) => {
                 return (
-                  <button
-                    key={link.id}
-                    onClick={() => handleScroll(link.id)}
-                    className={`text-left text-base font-medium tracking-tight ${
-                      active === link.id ? "text-orange-500" : "text-gray-800"
-                    }`}
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`text-left text-base font-medium tracking-tight
+    ${pathname === link.href ? "text-orange-500" : "text-gray-800"}
+  `}
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 );
               })}
-
-              {/* Optional CTA */}
-              <button
-                onClick={() => handleScroll("packages")}
-                className="mt-4 bg-orange-500 text-white py-3 rounded-full text-sm font-medium"
-              >
-                Explore Packages
-              </button>
             </nav>
           </motion.div>
         )}
