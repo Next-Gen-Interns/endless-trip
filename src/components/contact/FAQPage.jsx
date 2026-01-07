@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqData = [
   {
@@ -49,33 +50,49 @@ export default function FAQPage() {
     <section id="FAQPage" className="bg-gray-50 py-16 px-4">
       <div className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl sm:text-4xl font-bold text-gray-900"
+          >
             Frequently Asked Questions
-          </h2>
-          <p className="mt-4 text-gray-600 text-base sm:text-lg">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-4 text-gray-600 text-base sm:text-lg"
+          >
             Find answers to common questions about bookings, payments, travel
             documents, and more in our comprehensive FAQ.
-          </p>
+          </motion.p>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-10">
-          Frequently Asked Questions
-        </h2>
-
         {faqData.map((section, sIdx) => (
           <div key={section.title} className="mb-10">
-            <h3 className="text-2xl font-semibold mb-4 text-[#421C58] text-center">
+            <motion.h3
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-2xl font-semibold mb-4 text-[#421C58] text-center"
+            >
               {section.title}
-            </h3>
+            </motion.h3>
 
             {section.items.map((item, iIdx) => {
               const open = openIndex[`${sIdx}-${iIdx}`];
 
               return (
-                <div
+                <motion.div
                   key={item}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: iIdx * 0.1 }}
                   className="
                     border rounded-lg p-4 mb-3 bg-white
                     transition-all duration-300
@@ -98,12 +115,20 @@ export default function FAQPage() {
                     )}
                   </button>
 
-                  {open && (
-                    <p className="mt-3 text-gray-600">
-                      This is the answer for "{item}".
-                    </p>
-                  )}
-                </div>
+                  <AnimatePresence>
+                    {open && (
+                      <motion.p
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="mt-3 text-gray-600"
+                      >
+                        This is the answer for "{item}".
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
               );
             })}
           </div>

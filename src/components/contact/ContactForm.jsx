@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -19,10 +20,11 @@ export default function ContactForm() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-const handleSubmit = (e) => {
-  e.preventDefault();
 
-  const emailBody = `
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const emailBody = `
 Full Name: ${formData.fullName}
 Email: ${formData.email}
 Phone: ${formData.phone}
@@ -31,34 +33,30 @@ Travel Dates: ${formData.travelDates}
 Travelers: ${formData.travelers}
 Budget: ${formData.budget}
 Details: ${formData.details}
-  `;
+    `;
 
-  // Open Gmail with prefilled email
-  window.location.href =
-    "mailto:makvanaganpat5826@gmail.com" +
-    "?subject=New Travel Package Request" +
-    "&body=" +
-    encodeURIComponent(emailBody);
+    window.location.href =
+      "mailto:makvanaganpat5826@gmail.com" +
+      "?subject=New Travel Package Request" +
+      "&body=" +
+      encodeURIComponent(emailBody);
 
-  // Show success message
-  setSuccess(true);
+    setSuccess(true);
 
-  // Reset form after 2 seconds
-  setTimeout(() => {
-    setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      destination: "",
-      travelDates: "",
-      travelers: "",
-      budget: "",
-      details: "",
-    });
-    setSuccess(false); // hide success message
-  }, 2000);
-};
-
+    setTimeout(() => {
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        destination: "",
+        travelDates: "",
+        travelers: "",
+        budget: "",
+        details: "",
+      });
+      setSuccess(false);
+    }, 2000);
+  };
 
   const inputClass =
     "w-full px-5 py-4 text-[#6C757D] placeholder-[#6C757D] bg-white border border-[#6C757D] rounded-lg outline-none transition focus:border-[#421C58]";
@@ -69,7 +67,14 @@ Details: ${formData.details}
       className="min-h-screen bg-gray-50 py-12 sm:py-16 px-4 font-sans"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-10 sm:mb-12">
+
+        {/* HEADER */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-10 sm:mb-12"
+        >
           <h2 className="hidden sm:block text-4xl md:text-5xl lg:text-[60px] font-bold text-[#2C3E50] mb-4">
             Request A Custom Package
           </h2>
@@ -78,22 +83,32 @@ Details: ${formData.details}
             <span className="block">Custom Package</span>
           </h2>
           <div className="w-30 h-1 bg-[#421C58] mx-auto"></div>
-        </div>
+        </motion.div>
 
-        <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 lg:p-12">
+        {/* FORM CARD */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="bg-white rounded-xl shadow-lg p-6 sm:p-8 lg:p-12"
+        >
           <h3 className="text-[28px] sm:text-[32px] font-bold text-[#421C58] mb-6">
             Your Travel Details
             <div className="w-20 h-1 bg-orange-600 mt-2"></div>
           </h3>
 
           {success && (
-            <p className="text-green-600 font-semibold text-center mb-6">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-green-600 font-semibold text-center mb-6"
+            >
               Data submitted successfully ✅
               <br />
               <span className="text-sm text-gray-500">
                 (Please click Send in Gmail)
               </span>
-            </p>
+            </motion.p>
           )}
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -187,13 +202,14 @@ Details: ${formData.details}
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="w-full sm:w-auto px-10 py-4 bg-[#FD8513] hover:bg-orange-500 text-white font-semibold rounded-full transition"
+                className="w-full sm:w-auto px-10 py-4 bg-[#FD8513]
+                hover:bg-orange-500 text-white font-semibold rounded-full transition"
               >
                 Submit Request
               </button>
             </div>
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
