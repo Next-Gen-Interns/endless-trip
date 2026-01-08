@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function AdminLoginPage() {
   const [password, setPassword] = useState("");
@@ -29,16 +30,29 @@ export default function AdminLoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-10 rounded-xl shadow-lg w-full max-w-sm"
+        className="bg-white p-8 md:p-10 rounded-xl shadow-lg w-full max-w-md"
       >
-        <h1 className="text-2xl font-bold text-center mb-6">
+        {/* Logo */}
+        <div className="flex justify-center mb-4">
+          <div className="relative w-36 h-36">
+            <Image
+              src="/logo.jpeg"
+              alt="Endless Trips Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+        </div>
+
+        <h1 className="text-3xl font-bold text-[#290d39] text-center mb-6">
           Admin Panel Login
         </h1>
 
         <input
           type="password"
           placeholder="Password"
-          className="w-full border rounded-lg px-4 py-3 mb-4"
+          className="w-full border rounded-sm px-4 py-3 mb-4 focus:outline-none focus:ring-2 focus:ring-[#4b1d63]"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
@@ -47,7 +61,7 @@ export default function AdminLoginPage() {
 
         <button
           type="submit"
-          className="w-full bg-[#4b1d63] text-white py-3 rounded-lg font-semibold"
+          className="w-full bg-[#4b1d63] text-white py-3 rounded-lg font-semibold hover:bg-[#3a154d] transition-colors duration-200"
         >
           Login
         </button>

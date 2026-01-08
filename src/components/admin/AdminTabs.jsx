@@ -8,21 +8,24 @@ export default function AdminTabs() {
 
   const tabs = [
     {
-      label: "📩 Custom Requests",
+      label: "Custom Requests",
+      icon: "fas fa-envelope-open-text",
       path: "/admin/custom-requests",
     },
     {
-      label: "➕ Add / Edit Package",
+      label: "Add / Edit Package",
+      icon: "fas fa-plus-circle",
       path: "/admin/add-edit-package",
     },
     {
-      label: "📦 Manage Packages",
+      label: "Manage Packages",
+      icon: "fas fa-list-alt",
       path: "/admin/manage-packages",
     },
   ];
 
   const base =
-    "flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold transition-all duration-200";
+    "flex items-center justify-center gap-3 px-6 py-4 rounded-xl font-semibold transition-all duration-200";
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
@@ -39,7 +42,8 @@ export default function AdminTabs() {
                 : "bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-800"
             }`}
           >
-            {t.label}
+            <i className={`${t.icon} text-lg`}></i>
+            <span>{t.label}</span>
           </button>
         );
       })}

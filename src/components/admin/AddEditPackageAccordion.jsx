@@ -9,12 +9,12 @@ import InclusionsExclusionsSection from "./InclusionsExclusionsSection.jsx";
 import TermsConditionsSection from "./TermsConditionsSection.jsx";
 
 const SECTIONS = [
-  { title: "Itinerary Details", icon: "🗺️" },
-  { title: "Hotel Details", icon: "🏨" },
-  { title: "Flight Details", icon: "✈️" },
-  { title: "Visa Details", icon: "🛂" },
-  { title: "Inclusions & Exclusions", icon: "📋" },
-  { title: "Terms & Conditions", icon: "📄" },
+  { title: "Itinerary Details", icon: "fas fa-route" },
+  { title: "Hotel Details", icon: "fas fa-hotel" },
+  { title: "Flight Details", icon: "fas fa-plane" },
+  { title: "Visa Details", icon: "fas fa-passport" },
+  { title: "Inclusions & Exclusions", icon: "fas fa-list-check" },
+  { title: "Terms & Conditions", icon: "fas fa-file-contract" },
 ];
 
 export default function AddEditPackageAccordion({ form, setForm }) {
@@ -54,21 +54,21 @@ export default function AddEditPackageAccordion({ form, setForm }) {
                   `}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="text-lg">{section.icon}</span>
+                    <i
+                      className={`${section.icon} text-gray-600 w-5 text-center`}
+                    ></i>
                     <span className="font-semibold text-gray-800">
                       {section.title}
                     </span>
                   </div>
 
                   {/* CHEVRON */}
-                  <span
+                  <i
                     className={`
-                      text-xl transition-transform duration-300 ease-out
+                      fas fa-chevron-down text-gray-500 text-sm transition-transform duration-300 ease-out
                       ${isOpen ? "rotate-180" : ""}
                     `}
-                  >
-                    ⌄
-                  </span>
+                  ></i>
                 </button>
 
                 {/* CONTENT SHELL */}
