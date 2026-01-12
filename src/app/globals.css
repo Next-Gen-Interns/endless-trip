@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+
+.beach-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+    url("https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1368&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.location-font-size{
+  font-size: 0.95rem;
+}
+
+/* .text-shadow {
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+.font{
+  font-family: 'Poppins', sans-serif;
+}
+.dropdown-heading{
+  color: #2c3e50;
+}
+.dropdown-border{
+  border : 1px solid #6c757d;
+}
+.filters-colors{
+  color:  #333;
+}
+
+.dropwdown:focus{
+  box-shadow: 0 0 0 0.25rem rgba(rgba(66,28,88), 0.25);
+}
+
+.border{
+  border : 1px solid #e9ecef;
+}
+
+
+.hero-btn {
+  background: linear-gradient(to right, #fd8513, #e07210);
+}
+
+.hero-box-shadow{
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+} */
+
+.font {
+  font-family: "Poppins", sans-serif;
+}
+
+.dropdown-heading {
+  color: #2c3e50;
+}
+
+.dropdown-border {
+  border: 1px solid #ced4da;
+}
+
+.border {
+  border: 1px solid #e9ecef;
+}
+
+.hero-btn {
+  background: linear-gradient(to right, #fd8513, #e07210);
+}
+
+.hero-box-shadow {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.text-shadow {
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+.filter-btn {
+  background: linear-gradient(to right, #421c58, #7b2a9e);
+}
+
+.filter-btn-2 {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to left, #421c58, #7b2a9e);
+  color: white;
+}

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beach Travel Packages | Dream Destinations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+        }
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .beach-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1746&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .package-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .package-card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md py-4 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <i class="fas fa-umbrella-beach text-3xl text-blue-500 mr-3"></i>
+                <span class="text-2xl font-bold heading-font text-blue-700">BeachEscapes</span>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                <a href="#" class="font-medium text-blue-600 hover:text-blue-800 transition">Home</a>
+                <a href="#" class="font-medium text-gray-600 hover:text-blue-800 transition">Packages</a>
+                <a href="#" class="font-medium text-gray-600 hover:text-blue-800 transition">Destinations</a>
+                <a href="#" class="font-medium text-gray-600 hover:text-blue-800 transition">About</a>
+                <a href="#" class="font-medium text-gray-600 hover:text-blue-800 transition">Contact</a>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition shadow-md">Book Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="beach-bg text-white py-20 md:py-32 px-6">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h1 class="text-4xl md:text-6xl font-bold heading-font mb-6">Explore Our Travel Packages</h1>
+            <p class="text-xl md:text-2xl mb-8">Discover handcrafted holidays to the world's most incredible destinations</p>
+            <div class="bg-white/20 backdrop-blur-sm p-6 md:p-8 rounded-xl inline-block">
+                <p class="text-2xl md:text-3xl font-bold mb-2">With over <span class="text-yellow-300">75 countries</span> to choose from</p>
+                <p class="text-lg md:text-xl">Your dream vacation is just a click away</p>
+            </div>
+            <div class="mt-12">
+                <button class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-8 py-4 rounded-full text-xl font-bold transition shadow-lg transform hover:scale-105">Find Your Dream Trip</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-16 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold heading-font text-blue-800 mb-4">Popular Beach Destinations</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">From tropical paradises to serene coastal getaways, we have the perfect beach vacation for you.</p>
+            </div>
+
+            <!-- Travel Packages Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Package 1 -->
+                <div class="package-card bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Maldives" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-blue-800">Maldives Paradise</h3>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-bold">$2,499</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Experience luxury overwater bungalows and crystal clear waters in this tropical paradise.</p>
+                        <div class="flex items-center text-yellow-500 mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="text-gray-600 ml-2">4.7 (243 reviews)</span>
+                        </div>
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="package-card bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Bali" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-blue-800">Bali Cultural Escape</h3>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-bold">$1,799</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Immerse yourself in Balinese culture, beautiful beaches, and lush rice terraces.</p>
+                        <div class="flex items-center text-yellow-500 mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="text-gray-600 ml-2">5.0 (189 reviews)</span>
+                        </div>
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition">View Details</button>
+                    </div>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="package-card bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Greece" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-blue-800">Greek Islands Tour</h3>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-bold">$2,199</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Explore the stunning white-washed buildings and turquoise waters of Santorini and Mykonos.</p>
+                        <div class="flex items-center text-yellow-500 mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="text-gray-600 ml-2">4.9 (312 reviews)</span>
+                        </div>
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8 md:p-12 mb-16">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold heading-font text-center text-blue-800 mb-10">Why Choose Our Travel Packages?</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-map-marked-alt text-2xl text-blue-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-blue-800 mb-2">75+ Destinations</h3>
+                            <p class="text-gray-600">Choose from over 75 countries with carefully curated travel experiences.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-handshake text-2xl text-blue-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-blue-800 mb-2">Handcrafted Holidays</h3>
+                            <p class="text-gray-600">Every trip is carefully designed to provide unique and memorable experiences.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-headset text-2xl text-blue-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-blue-800 mb-2">24/7 Support</h3>
+                            <p class="text-gray-600">Our travel experts are available round the clock to assist you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-10 md:p-16 text-white">
+                <h2 class="text-3xl md:text-4xl font-bold heading-font mb-6">Ready for Your Dream Vacation?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">With over 75 countries to choose from and handcrafted holiday experiences, your perfect trip is waiting.</p>
+                <button class="bg-white text-blue-700 hover:bg-gray-100 px-10 py-4 rounded-full text-xl font-bold transition shadow-lg transform hover:scale-105">Find Your Dream Trip</button>
+                <p class="mt-6 text-blue-100">Limited time offer: Get 15% off on all bookings made this month!</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-umbrella-beach text-3xl text-yellow-300 mr-3"></i>
+                        <span class="text-2xl font-bold heading-font">BeachEscapes</span>
+                    </div>
+                    <p class="text-blue-200">Creating unforgettable beach vacation experiences since 2010.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-yellow-300 transition">Home</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-yellow-300 transition">Packages</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-yellow-300 transition">Destinations</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-yellow-300 transition">Special Offers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-blue-200">
+                        <li class="flex items-center"><i class="fas fa-phone-alt mr-3 text-yellow-300"></i> +1 (800) 555-1234</li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-3 text-yellow-300"></i> info@beachescapes.com</li>
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt mr-3 text-yellow-300"></i> 123 Beachfront Ave, Miami, FL</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                    <p class="text-blue-200 mb-4">Subscribe for exclusive deals and travel tips.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-grow px-4 py-2 rounded-l-lg text-gray-800">
+                        <button class="bg-yellow-400 text-blue-900 px-4 py-2 rounded-r-lg font-bold"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-10 pt-6 text-center text-blue-300">
+                <p>&copy; 2023 BeachEscapes Travel. All rights reserved. | Designed with Tailwind CSS</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple interaction for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                if(this.textContent.includes('Find Your Dream Trip') || this.textContent.includes('View Details')) {
+                    alert('Thank you for your interest! Our travel experts will help you find the perfect vacation package.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
