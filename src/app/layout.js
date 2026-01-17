@@ -11,11 +11,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Endless Trips - Explore the World",
-  description:
-    "Explore domestic and international travel packages with best prices, expert planning, and 24/7 support.",
-};
+
 
 
 export default function RootLayout({ children }) {

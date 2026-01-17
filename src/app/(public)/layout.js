@@ -8,8 +8,9 @@ import Footer from "@/components/Footer.jsx";
 
 
 export const metadata = {
-  title: "My App",
-  description: "Built with Next.js",
+  title: "Endless Trips - Explore the World",
+  description:
+    "Explore domestic and international travel packages with best prices, expert planning, and 24/7 support.",
 };
 
 export default function PublicLayout({ children }) {
