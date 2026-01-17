@@ -388,7 +388,7 @@ function AboutPage() {
       >
         {/* Background */}
         <div className="absolute inset-0 beach-bg-3 bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
 
         <div className="relative container mx-auto px-4 sm:px-6 max-w-7xl">
           {/* Heading */}

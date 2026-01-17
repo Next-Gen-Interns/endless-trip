@@ -25,6 +25,12 @@ export async function POST(req) {
         { status: 400 }
       );
     }
+    if (!email.includes("@")) {
+      return Response.json(
+        { success: false, message: "Invalid email address" },
+        { status: 400 }
+      );
+    }
 
     await pool.query(
       `INSERT INTO custom_package_requests

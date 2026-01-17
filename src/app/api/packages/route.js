@@ -14,6 +14,12 @@ export async function GET() {
          days,
          rating,
          badge,
+         adults,
+         nights,
+         rating,
+         image_url,
+         duration_category,
+         package_type,
          created_at
        FROM packages
        ORDER BY created_at DESC`

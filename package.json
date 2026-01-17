@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "endless-trip",
-=======
-  "name": "endlesstrip",
->>>>>>> 4f30aa49bd051eb3f88a4ebf5601f5a1fe1f47c7
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,21 +10,16 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.1.0",
-<<<<<<< HEAD
-    "framer-motion": "^12.23.26",
-    "next": "16.1.1",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
-=======
+    "cloudinary": "^2.8.0",
     "dotenv": "^17.2.3",
     "framer-motion": "^12.24.7",
     "lucide-react": "^0.562.0",
     "next": "16.1.1",
+    "nodemailer": "^7.0.12",
     "pg": "^8.16.3",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-icons": "^5.5.0"
->>>>>>> 4f30aa49bd051eb3f88a4ebf5601f5a1fe1f47c7
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

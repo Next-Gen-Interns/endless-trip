@@ -21,29 +21,35 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const emailBody = `
-Full Name: ${formData.fullName}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Destination: ${formData.destination}
-Travel Dates: ${formData.travelDates}
-Travelers: ${formData.travelers}
-Budget: ${formData.budget}
-Details: ${formData.details}
-    `;
+    try {
+      const res = await fetch("/api/custom-requests", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          destination: formData.destination,
+          travel_date: formData.travelDates,
+          travelers: formData.travelers,
+          budget: formData.budget,
+          message: formData.details,
+        }),
+      });
 
-    window.location.href =
-      "mailto:makvanaganpat5826@gmail.com" +
-      "?subject=New Travel Package Request" +
-      "&body=" +
-      encodeURIComponent(emailBody);
+      const data = await res.json();
 
-    setSuccess(true);
+      if (!res.ok) {
+        throw new Error(data.message || "Something went wrong");
+      }
 
-    setTimeout(() => {
+      setSuccess(true);
+
       setFormData({
         fullName: "",
         email: "",
@@ -54,8 +60,12 @@ Details: ${formData.details}
         budget: "",
         details: "",
       });
-      setSuccess(false);
-    }, 2000);
+
+      setTimeout(() => setSuccess(false), 3000);
+    } catch (error) {
+      console.error(error);
+      alert("Failed to submit request. Please try again.");
+    }
   };
 
   const inputClass =
@@ -67,7 +77,6 @@ Details: ${formData.details}
       className="min-h-screen bg-gray-50 py-12 sm:py-16 px-4 font-sans"
     >
       <div className="max-w-6xl mx-auto">
-
         {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -104,10 +113,6 @@ Details: ${formData.details}
               className="text-green-600 font-semibold text-center mb-6"
             >
               Data submitted successfully ✅
-              <br />
-              <span className="text-sm text-gray-500">
-                (Please click Send in Gmail)
-              </span>
             </motion.p>
           )}
 
@@ -154,7 +159,7 @@ Details: ${formData.details}
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <input
-                type="text"
+                type="date"
                 name="travelDates"
                 value={formData.travelDates}
                 onChange={handleChange}
@@ -180,9 +185,7 @@ Details: ${formData.details}
             >
               <option value="">Select Estimated Budget Per Person</option>
               <option value="Under ₹50,000">Under ₹50,000</option>
-              <option value="₹50,000 - ₹1,00,000">
-                ₹50,000 - ₹1,00,000
-              </option>
+              <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
               <option value="₹1,00,000 - ₹2,00,000">
                 ₹1,00,000 - ₹2,00,000
               </option>
