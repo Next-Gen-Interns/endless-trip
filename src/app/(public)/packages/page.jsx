@@ -327,7 +327,14 @@ const page = () => {
             }}
             className="mt-10"
           >
-            <button className="text-white hero-box-shadow bg-[#e07210] px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg md:text-xl font-bold transition transform hover:scale-105">
+            <button
+              onClick={() => {
+                document
+                  .getElementById("packageContainer")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              className="text-white hero-box-shadow bg-[#e07210] px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg md:text-xl font-bold transition transform hover:scale-105"
+            >
               Find Your Dream Trip
             </button>
           </motion.div>
